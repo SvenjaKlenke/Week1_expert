@@ -93,4 +93,15 @@ class MainTest {
         assertEquals(b, actual);
     }
 
+    @Test
+    void roemischeZahl_24() {
+        //GIVEN
+        int a = 24;
+        String b = "XXIV";
+        //WHEN
+        String actual = Main.roemischeZahl(a);
+        //THEN
+        assertEquals(b, actual);
+    }
+
 }

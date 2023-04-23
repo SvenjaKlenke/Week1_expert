@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-      System.out.println(roemischeZahl(14));
+      System.out.println(roemischeZahl(99));
 
     }
 
@@ -68,6 +68,7 @@ public class Main {
 
         String[] ar = new String[zahl];
 
+
         int i = 1;
         while (i < ar.length) {
             String blub = Integer.toString(i);
@@ -84,7 +85,14 @@ public class Main {
         }else if (ar.length>= 50) {
             return d + vier(zahl);
         } else if (ar.length >= 10) {
-            return c + vier(zahl);
+            int [] ar1 = new int [zahl];
+            int laenge = ar1.length;
+            int ersteZiffer = Integer.parseInt(Integer.toString(laenge).substring(0, 1));
+            String result = "";
+                for (int y = 1; y <=ersteZiffer; ++y){
+                    result += c;
+                }
+            return result + vier(zahl);
         } else if (ar.length>= 5) {
             return b+ vier(zahl);
         } else if (zahl == 4) {
