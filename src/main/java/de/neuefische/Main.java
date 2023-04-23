@@ -57,8 +57,15 @@ public class Main {
     }
     //Gib eine Ganzzahl (1-100) als römische Zahl aus (12 = XII)
     public static String vier (int zahl1){
-        if (Integer.toString(zahl1).contains("4")) {
+        if (zahl1 % 10 == 4) {
             return "IV";
+        }
+        return "";
+    }
+
+    public static String fuenf (int zahl2){
+        if (zahl2 % 10 == 5) {
+            return "V";
         }
         return "";
     }
@@ -81,9 +88,9 @@ public class Main {
         String d = "L";
         String e = "C";
         if (ar.length>= 100) {
-            return e + vier(zahl);
+            return e +fuenf(zahl)+ vier(zahl);
         }else if (ar.length>= 50) {
-            return d + vier(zahl);
+            return d +fuenf(zahl)+ vier(zahl);
         } else if (ar.length >= 10) {
             int [] ar1 = new int [zahl];
             int laenge = ar1.length;
@@ -92,9 +99,10 @@ public class Main {
                 for (int y = 1; y <=ersteZiffer; ++y){
                     result += c;
                 }
-            return result + vier(zahl);
-        } else if (ar.length>= 5) {
-            return b+ vier(zahl);
+            return result +fuenf(zahl)+ vier(zahl);
+
+        } else if (ar.length >= 5) {
+            return b;
         } else if (zahl == 4) {
             return "IV";
         }

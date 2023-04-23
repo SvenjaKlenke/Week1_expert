@@ -104,4 +104,36 @@ class MainTest {
         assertEquals(b, actual);
     }
 
+    @Test
+    void roemischeZahl_15() {
+        //GIVEN
+        int a = 15;
+        String b = "XV";
+        //WHEN
+        String actual = Main.roemischeZahl(a);
+        //THEN
+        assertEquals(b, actual);
+    }
+
+    @Test
+    void roemischeZahl_55() {
+        //GIVEN
+        int a = 55;
+        String b = "LV";
+        //WHEN
+        String actual = Main.roemischeZahl(a);
+        //THEN
+        assertEquals(b, actual);
+    }
+    @Test
+    void roemischeZahl_6() {
+        //GIVEN
+        int a = 6;
+        String b = "VI";
+        //WHEN
+        String actual = Main.roemischeZahl(a);
+        //THEN
+        assertEquals(b, actual);
+    }
+
 }
